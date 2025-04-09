@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" >
+	<title>BMI CALCULATOR</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<style>		
+		body{
+			background-image: url(https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-attachment: fixed;
+		}
+		.textdes{
+			color: #FFFFFF;
+			text-align: center;
+			font-family: Poppins;
+		}
+
+		</style>
+</head>
+<body>
+	<nav class="navbar navbar-expand-md fixed-top" style="background-color: #2d3f2c">
+ <div class="container-fluid">
+
+ 		<div class="collapse navbar-collapse">
+ 			<ul class="navbar-nav me-auto">
+ 				<li class="nav-item">
+ 				<a class="nav-link" href="index.html" style="font-family: Arvo; color: white;">CALCULATOR</a> 		
+ 			</ul>
+ 			<form class="d-flex">
+ 			</form>
+ 		</div>
+ 	</div>
+ </nav>
+ <br><br>
+	<h1 style="font-size: 100px;" class="textdes">BMI CALCULATOR</h1>
+	<br><br>
+
+	<p></p>
+
+		<form class="textdes" style="font-size: 20px">
+			<label>WEIGHT HERE:</label>
+			<br>
+			<input type="number" name="WEIGHT" class="form-light" id="WEIGHT" placeholder="In Kilograms" style="text-align: center; color: black;">
+			<br><br>
+			<label>HEIGHT HERE:</label>
+			<br>
+			<input type="number" name="HEIGHT" class="form-light" id="HEIGHT" placeholder="In Meters" style="text-align: center; color: black;">
+		</form>
+		<br><br>
+		<center><button type="SUBMIT" class="btn btn-dark" onclick="BMI()" class="textdes">GET BMI</button></center>
+
+	<script>
+		function BMI(){
+			//I get your inputed values through this
+			var HEIGHT = document.getElementById("HEIGHT").value;
+			var WEIGHT = document.getElementById("WEIGHT").value;
+			//Basically you devide weight with the square of height to get the BMI
+			var BMI = WEIGHT / HEIGHT ** 2;
+			//The index is through the NHLBI us gov website, basic comparisons to get your BMI for you
+			if (BMI < 18.5){
+				window.alert("Your BMI is " + BMI + " You are UNDERWEIGHT"); //shows you what your BMI is
+			}else if (BMI >= 18.5 && BMI <= 24.9){ //comparisons to ensure you know what your bmi is
+				window.alert("Your BMI is " + BMI + " You are NORMAL");
+			}else if (BMI >= 25 && BMI <= 29.9){
+				window.alert("Your BMI is " + BMI + " You are OVERWEIGHT");
+			}else if (WEIGHT == "" || HEIGHT == ""){
+				window.alert("NOT ENOUGH INFO, TRY AGAIN");
+			}else if (BMI >= 30){
+				window.alert("Your BMI is " + BMI + " You are OBESE");
+			}
+		}
+	</script>
+	<br><br>
+	<center>
+	<a href="https://www.pxfuel.com/en/desktop-wallpaper-clptm" class="textdes">PHOTOS USED</a> 
+</center>
+</body>
+</html>
